@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/loginFragment2">
+
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.pesh.mentalhealthmaster.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment2_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/illnessItemsFragment"
+        android:name="com.pesh.mentalhealthmaster.IllnessItemsFragment"
+        android:label="fragment_illness_items_list"
+        tools:layout="@layout/fragment_illness_items_list" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.pesh.mentalhealthmaster.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_illnessItemsFragment"
+            app:destination="@id/illnessItemsFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
